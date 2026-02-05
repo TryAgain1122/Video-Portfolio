@@ -61,7 +61,7 @@ export const videos: Video[] = [
     title: "",
     category: "SHORT EDIT",
     thumbnail: "/thumbnails/jihyo.png",
-    videoUrl: "https://res.cloudinary.com/dmvcdj8n8/video/upload/v1770296635/JENNY_EDIT_u0mq7v.mp4",
+    videoUrl: "https://res.cloudinary.com/dmvcdj8n8/video/upload/v1770296637/jihyo_edit_ytkwaj.mp4",
     duration: "",
     views: "78K",
     featured: false,
