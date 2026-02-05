@@ -58,7 +58,7 @@ export const FullscreenModal: React.FC<FullscreenModalProps> = ({
       if (isPlaying) {
         setShowControls(false);
       }
-    }, 3000);
+    }, 500);
     
     setHideTimeout(timeout);
   };
