@@ -41,7 +41,7 @@ export const About: React.FC = () => {
             className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border border-violet-500/30 text-white hover:from-violet-500/30 hover:to-fuchsia-500/30 transition-all duration-300"
           >
             <FaTiktok className="w-5 h-5" />
-            <span className="font-semibold">View my TikTok Editing Account</span>
+            <span className="font-semibold">View my Editing Account</span>
             <span className="text-white/60 text-sm">@{tiktokUsername}</span>
           </a>
         </div>
