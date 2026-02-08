@@ -15,11 +15,11 @@ export const Navigation: React.FC = () => {
             RAFHAEL VIDEO EDITS
           </span>
         </div>
-        {/* <div className="hidden md:flex gap-6 text-sm">
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">About</a>
-          <a href="/" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-        </div> */}
+        <div className="hidden md:flex gap-6 text-sm">
+          <a href="#portfolio" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+          <a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
       </div>
     </nav>
   );

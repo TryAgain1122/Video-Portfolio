@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Mail, MessageCircle, Instagram, Youtube } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FaTiktok, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 export const Contact: React.FC = () => {
   return (
@@ -22,72 +23,72 @@ export const Contact: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Email */}
         <a 
-          href="mailto:your.email@example.com"
+          href="mailto:rafhaelluis@gmail.com"
           className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-violet-500/50 transition-all duration-300 hover:scale-105"
         >
           <div className="w-14 h-14 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-all">
             <Mail className="w-7 h-7 text-violet-400" />
           </div>
           <h3 className="text-white font-bold mb-2">Email</h3>
-          <p className="text-sm text-gray-400">your.email@example.com</p>
+          <p className="text-sm text-gray-400">rafhaelluis@gmail.com</p>
         </a>
 
         {/* TikTok */}
-        <a 
-          href="https://tiktok.com/@yourusername"
+        <a
+          href="https://www.tiktok.com/@karina._verse"
           target="_blank"
           rel="noopener noreferrer"
           className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-fuchsia-500/50 transition-all duration-300 hover:scale-105"
         >
           <div className="w-14 h-14 rounded-full bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center mb-4 group-hover:bg-fuchsia-500/30 transition-all">
-            <MessageCircle className="w-7 h-7 text-fuchsia-400" />
+            <FaTiktok className="w-7 h-7 text-fuchsia-400" />
           </div>
           <h3 className="text-white font-bold mb-2">TikTok</h3>
-          <p className="text-sm text-gray-400">@yourusername</p>
+          <p className="text-sm text-gray-400">@karina._verse</p>
         </a>
 
         {/* Instagram */}
-        <a 
-          href="https://instagram.com/yourusername"
+        <a
+          href="https://www.instagram.com/rafhaelluissss"
           target="_blank"
           rel="noopener noreferrer"
           className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-pink-500/50 transition-all duration-300 hover:scale-105"
         >
           <div className="w-14 h-14 rounded-full bg-pink-500/20 border border-pink-500/30 flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-all">
-            <Instagram className="w-7 h-7 text-pink-400" />
+            <FaInstagram className="w-7 h-7 text-pink-400" />
           </div>
           <h3 className="text-white font-bold mb-2">Instagram</h3>
-          <p className="text-sm text-gray-400">@yourusername</p>
+          <p className="text-sm text-gray-400">@rafhaelluissss</p>
         </a>
 
         {/* YouTube */}
-        <a 
-          href="https://youtube.com/@yourusername"
+        <a
+          href="https://www.youtube.com/@dasha.edits1143"
           target="_blank"
           rel="noopener noreferrer"
           className="group bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-300 hover:scale-105"
         >
           <div className="w-14 h-14 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-all">
-            <Youtube className="w-7 h-7 text-red-400" />
+            <FaYoutube className="w-7 h-7 text-red-400" />
           </div>
           <h3 className="text-white font-bold mb-2">YouTube</h3>
-          <p className="text-sm text-gray-400">@yourusername</p>
+          <p className="text-sm text-gray-400">@Dasha.edits11</p>
         </a>
       </div>
 
       {/* Commission Info */}
-      <div className="mt-12 bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 backdrop-blur-sm border border-violet-500/30 rounded-2xl p-8 text-center">
+      {/* <div className="mt-12 bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 backdrop-blur-sm border border-violet-500/30 rounded-2xl p-8 text-center">
         <h3 className="text-2xl font-bold text-white mb-3">Open for Commissions</h3>
         <p className="text-gray-400 mb-6">
           I'm currently accepting commission work for custom fan edits. Let's create something amazing together!
         </p>
         <a 
-          href="mailto:your.email@example.com"
+          href="mailto:rafhaelluis@gmail.com"
           className="inline-block px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold rounded-full hover:shadow-lg hover:shadow-violet-500/50 transition-all duration-300 hover:scale-105"
         >
           Commission an Edit
         </a>
-      </div>
+      </div> */}
     </section>
   );
 };

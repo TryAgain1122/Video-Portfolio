@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { AnimatedBackground } from '@/components/AnimatedBackground';
 import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
@@ -12,7 +12,7 @@ import { Footer } from '@/components/Footer';
 
 import { MousePosition, PlayingState, MutedState, ProgressState, VideoRefs } from '@/types';
 import { videos } from '@/types/video';
-import { Contact } from 'lucide-react';
+import { Contact } from '@/components/Contacts';
 
 export default function Home() {
   const [fullscreenVideo, setFullscreenVideo] = useState<number | null>(null);
@@ -23,8 +23,6 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
   const videoRefs = useRef<VideoRefs>({});
   const fullscreenVideoRefs = useRef<VideoRefs>({});
-  const [activeVideo, setActiveVideo] = useState<number | null>(null);
-
 
   const togglePlay = (id: number, e: React.MouseEvent): void => {
     e.stopPropagation();
@@ -73,6 +71,14 @@ export default function Home() {
     }
   };
 
+  const handleSeek = (id: number, percent: number): void => {
+    const video = fullscreenVideo === id ? fullscreenVideoRefs.current[id] : videoRefs.current[id];
+    if (video && video.duration) {
+      video.currentTime = (percent / 100) * video.duration;
+      setProgress(prev => ({ ...prev, [id]: percent }));
+    }
+  };
+
   const handleExpand = (id: number): void => {
     setFullscreenVideo(id);
     // Transfer playback state to fullscreen video
@@ -100,9 +106,13 @@ export default function Home() {
     }
   };
 
-  const handleMouseMove = (e: MouseEvent): void => {
+  const lastMouseMove = useRef(0);
+  const handleMouseMove = useCallback((e: MouseEvent): void => {
+    const now = Date.now();
+    if (now - lastMouseMove.current < 16) return; // ~60fps throttle
+    lastMouseMove.current = now;
     setMousePosition({ x: e.clientX, y: e.clientY });
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
@@ -161,7 +171,8 @@ export default function Home() {
                 onMuteToggle={(e) => toggleMute(video.id, e)}
                 onExpand={() => handleExpand(video.id)}
                 onTimeUpdate={() => handleTimeUpdate(video.id)}
-                isActive={activeVideo === video.id}
+                onSeek={(percent) => handleSeek(video.id, percent)}
+                isActive={false}
               />
             ))}
           </div>
@@ -185,6 +196,7 @@ export default function Home() {
           onPlayToggle={(e) => togglePlay(fullscreenVideo, e)}
           onMuteToggle={(e) => toggleMute(fullscreenVideo, e)}
           onTimeUpdate={() => handleTimeUpdate(fullscreenVideo)}
+          onSeek={(percent) => handleSeek(fullscreenVideo, percent)}
         />
       )}
     </div>

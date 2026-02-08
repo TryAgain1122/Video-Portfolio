@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
             <span className="text-xl font-bold text-white">RAFHAEL VIDEO EDITS</span>
           </div>
           <p className="text-gray-400 text-sm">
-            © 2025 Fan Edit Portfolio. Crafted with passion and precision.
+            © 2026 Fan Edit Portfolio. Crafted with passion and precision.
           </p>
         </div>
       </div>
